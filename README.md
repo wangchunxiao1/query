@@ -1,254 +1,186 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>明细查询</title>
+    <title>我的账户</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
         }
-        header {
-            background-color: #f8f8f8;
-            padding: 10px;
+        .header {
+            background-color: #fff;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .header-left {
+        .header h1 {
+            margin: 0;
+        }
+        .header .options {
             display: flex;
             align-items: center;
         }
-        .header-left span {
+        .header .options img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .card .card-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .card .card-info .card-number {
+            display: flex;
+            align-items: center;
+        }
+        .card .card-info .card-number img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             margin-right: 10px;
         }
-        .account-number {
+        .card .card-info .card-number span {
             font-size: 24px;
-            margin: 10px;
+            color: #333;
         }
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            background-color: #e8e8e8;
-            padding: 10px;
+        .card .card-info .card-number button {
+            background-color: #38d9a9;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 10px;
         }
-        .tab {
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        .tab.active {
-            background-color: #ff9800;
-            color: white;
-        }
-        .transactions {
-            padding: 20px;
-        }
-        .transaction {
+        .card .card-balance {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #e8e8e8;
+            margin-top: 20px;
         }
-        .transaction:last-child {
-            border-bottom: none;
+        .card .card-balance .balance {
+            font-size: 24px;
+            color: #333;
+        }
+        .card .card-balance .details {
+            background-color: #e0f2f1;
+            color: #38d9a9;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .card .card-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card .card-actions button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .card .card-actions button:hover {
+            background-color: #e0e0e0;
+        }
+        .credit-card {
+            margin: 20px;
+        }
+        .credit-card img {
+            width: 100%;
+            height: auto;
+        }
+        .open-account {
+            background-color: #fff;
+            border: 2px dashed #f5a623;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+        .open-account button {
+            background-color: #f5a623;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .open-account button:hover {
+            background-color: #f1c40f;
+        }
+        .footer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <span>返回</span>
-            <h1>明细查询</h1>
+    <div class="header">
+        <img src="https://via.placeholder.com/20" alt="Back">
+        <h1>我的账户</h1>
+        <div class="options">
+            <img src="https://via.placeholder.com/20" alt="Option 1">
+            <img src="https://via.placeholder.com/20" alt="Option 2">
+            <img src="https://via.placeholder.com/20" alt="Option 3">
         </div>
-        <div class="header-right">
-            <span>电话</span>
-            <span>筛选</span>
-        </div>
-    </header>
-    <div class="account-number">
-        6228 **** 9073
-        <span style="float: right;">人民币 | 本币</span>
     </div>
-    <div class="tabs">
-        <div class="tab active">近一周</div>
-        <div class="tab">近一月</div>
-        <div class="tab">近三月</div>
+    <div class="card">
+        <h2>借记卡</h2>
+        <div class="card-info">
+            <div class="card-number">
+                <img src="https://via.placeholder.com/40" alt="Card Icon">
+                <span>6228 **** 9073</span>
+                <button>查看</button>
+            </div>
+            <div>
+                <span>设置别名</span>
+                <input type="checkbox" checked>
+            </div>
+        </div>
+        <div class="card-balance">
+            <div class="balance">人民币可用余额：762.23</div>
+            <div class="details">详情</div>
+        </div>
+        <div class="card-actions">
+            <button>查询明细</button>
+            <button>我要转账</button>
+            <button>我要理财</button>
+        </div>
     </div>
-    <div class="transactions">
-        <!-- 生成的交易记录 -->
-        <div class="transaction">
-            <div>
-                <p>度小满（国美易…</p>
-                <p>2024-08-27 08:24:51</p>
-            </div>
-            <div>
-                <p>-4,726.67</p>
-                <p>余额：762.23</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>网银在线（京东…</p>
-                <p>2024-08-26 09:26:37</p>
-            </div>
-            <div>
-                <p>-3,028.59</p>
-                <p>余额：5,488.90</p>
-            </div>
-        </div>
-        <!-- 更多交易记录 -->
-        <div class="transaction">
-            <div>
-                <p>支付宝（购物…</p>
-                <p>2024-08-25 15:43:21</p>
-            </div>
-            <div>
-                <p>-123.45</p>
-                <p>余额：6,365.45</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>微信支付（餐饮…</p>
-                <p>2024-08-24 12:34:56</p>
-            </div>
-            <div>
-                <p>-56.78</p>
-                <p>余额：6,489.23</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>信用卡还款（招商银行…</p>
-                <p>2024-08-23 09:01:12</p>
-            </div>
-            <div>
-                <p>-1,000.00</p>
-                <p>余额：6,546.01</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>水电费缴费…</p>
-                <p>2024-08-22 10:11:22</p>
-            </div>
-            <div>
-                <p>-234.56</p>
-                <p>余额：7,546.01</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>工资收入…</p>
-                <p>2024-08-21 14:23:11</p>
-            </div>
-            <div>
-                <p>+4,500.00</p>
-                <p>余额：7,780.57</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>房租支出…</p>
-                <p>2024-08-20 16:34:21</p>
-            </div>
-            <div>
-                <p>-1,200.00</p>
-                <p>余额：3,280.57</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>话费充值…</p>
-                <p>2024-08-19 18:45:32</p>
-            </div>
-            <div>
-                <p>-50.00</p>
-                <p>余额：4,480.57</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>理财产品赎回…</p>
-                <p>2024-08-18 09:01:23</p>
-            </div>
-            <div>
-                <p>+2,300.00</p>
-                <p>余额：6,780.57</p>
-            </div>
-        </div>
-        <div class="transaction">
-            <div>
-                <p>银行存款利息…</p>
-                <p>2024-08-17 10:11:22</p>
-            </div>
-            <div>
-                <p>+123.45</p>
-                <p>余额：6,657.12</p>
-            </div>
-        </div>
-        <!-- 更多交易记录 -->
+    <div class="credit-card">
+        <img src="https://via.placeholder.com/300" alt="Credit Card">
     </div>
-    <script>
-        const tabs = document.querySelectorAll('.tab');
-        const transactions = document.querySelectorAll('.transaction');
+    <div class="open-account">
+        <button>开通电子账户</button>
+    </div>
 
-        function showTransactions(timePeriod) {
-            transactions.forEach((transaction, i) => {
-                let display = 'flex';
-
-                // 根据时间周期过滤交易记录
-                switch (timePeriod) {
-                    case 'week':
-                        if (i >= 7) display = 'none';
-                        break;
-                    case 'month':
-                        if (i >= 30) display = 'none';
-                        break;
-                    case 'threeMonths':
-                        if (i >= 90) display = 'none';
-                        break;
-                    default:
-                        display = 'flex';
-                }
-
-                transaction.style.display = display;
-            });
-        }
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => {
-                // 清除所有tab的active类
-                tabs.forEach(tab => tab.classList.remove('active'));
-                // 添加active类到当前点击的tab
-                tab.classList.add('active');
-
-                let timePeriod;
-
-                switch (index) {
-                    case 0:
-                        timePeriod = 'week';
-                        break;
-                    case 1:
-                        timePeriod = 'month';
-                        break;
-                    case 2:
-                        timePeriod = 'threeMonths';
-                        break;
-                    default:
-                        timePeriod = 'all';
-                }
-
-                showTransactions(timePeriod);
-            });
-        });
-
-        // 默认显示近一周的交易记录
-        showTransactions('week');
-    </script>
 </body>
 </html>
